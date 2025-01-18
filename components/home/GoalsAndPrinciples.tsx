@@ -1,4 +1,9 @@
+"use client";
+
+
 import React from 'react';
+import { motion } from 'framer-motion';
+import { GoalIcon } from 'lucide-react';
 
 interface Goal {
     name: string;
@@ -14,109 +19,104 @@ const goals: Goal[] = [
     {
         name: "Lead Generation",
         description:
-            "The primary objective is to attract potential clients who are actively seeking investment services. This involves capturing their contact information and initiating meaningful engagements.",
+            "Strategically attract and convert high-net-worth individuals seeking sophisticated investment solutions. Our targeted approach includes personalized consultations, wealth planning seminars, and exclusive investment workshops to establish meaningful relationships with qualified prospects.",
     },
     {
         name: "Brand Credibility",
         description:
-            "Cultivate a strong and trustworthy brand image that positions the firm as an expert in investment management. This includes demonstrating financial acumen and reliability.",
+            "Establish our firm as an industry leader through demonstrated expertise in wealth management, backed by our track record of successful portfolio management and client satisfaction. We showcase our team's combined 50+ years of experience and proven investment methodologies.",
     },
     {
         name: "Client Education",
         description:
-            "Provide prospective clients with clear and informative resources about the firm's offerings and expertise, empowering them to make well-informed investment decisions.",
+            "Empower investors with comprehensive resources including market insights, investment strategies, and portfolio management principles. Our educational approach combines webinars, detailed case studies, and personalized investment roadmaps to help clients make informed financial decisions.",
     }
 ];
 
-const principles: Principle[] = [
-    {
-        name: "User-Centricity",
-        description:
-            "Prioritize user needs and perspectives in the design and content of the landing page. Ensure the user experience is intuitive and focused on addressing their pain points.",
-    },
-    {
-        name: "Clarity",
-        description:
-            "Communicate intricate information with transparency and simplicity. Avoid jargon and ensure that all users, regardless of their financial expertise, can understand the content.",
-    },
-    {
-        name: "Trust",
-        description:
-            "Cultivate trust through meticulous, professional design elements, backed by solid social proof and unwavering commitment to security protocols. Establish confidence in the firm's competence and integrity.",
-    },
-    {
-        name: "Action-Oriented",
-        description:
-            "Guide users toward clear calls to action that are relevant to their needs and the firm's objectives. Make it simple and compelling for users to take the desired next steps.",
-    },
-    {
-        name: "Mobile-First Approach",
-        description:
-            "Develop with a mobile-first mentality to ensure a seamless user experience across all devices. Guarantee that the landing page is responsive and highly functional regardless of the screen size.",
-    },
-    {
-        name: "Accessibility",
-        description:
-            "Adhere to accessibility guidelines to make the page usable for all individuals, including those with disabilities. Prioritize inclusiveness and support for all users.",
-    },
-    {
-        name: "Performance",
-        description:
-            "Optimize the site for speed and responsiveness. A fast-loading page is essential for maintaining user engagement and overall satisfaction.",
-    },
-    {
-        name: "Scalability",
-        description:
-            "Ensure the page is structured for growth, allowing for easy expansion and addition of new features or content as the firm evolves and expands its services.",
-    }
-];
 
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: {
+        y: 100,
+        opacity: 0,
+        scale: 0.8
+    },
+    visible: {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        transition: {
+            type: "spring",
+            damping: 15,
+            stiffness: 100
+        }
+    }
+};
 
 const GoalsAndPrinciples = () => {
     return (
-        <section className="py-12 bg-gray-100">
-            <div className="container mx-auto px-4 border-2 border-red-500">
-                <h2 className="text-3xl font-bold mb-8 text-center text-red-600">
+        <motion.section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+                <motion.h2
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-4xl font-bold mb-12 text-center text-gray-800"
+                >
                     Our Goals and Principles
-                </h2>
-
+                </motion.h2>
 
                 {/* Goals Section */}
-                <article>
-                    <h3 className="text-2xl font-semibold mb-4 text-red-600">Our Goals</h3>
-                    <ul className="space-y-4  grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <article className="mb-16">
+                    <motion.h3
+                        initial={{ y: -20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-2xl font-semibold mb-8 text-gray-700 text-center"
+                    >
+                        <GoalIcon size={24} className="inline-block mr-2" /> 
+                    </motion.h3>
+                    <motion.ul
+                         variants={containerVariants}
+                         initial="hidden"
+                         whileInView="visible"
+                         viewport={{ once: true, amount: 0.2 }}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+                    >
                         {goals.map((goal, index) => (
-                            <li key={index} className="bg-white p-4 rounded-md shadow-md">
-                                <h4 className="text-xl font-semibold mb-2 text-red-600">{goal.name}</h4>
-                                <p className="text-gray-700">{goal.description}</p>
-                            </li>
+                            <motion.li
+                                key={index}
+                                variants={cardVariants}
+                                whileHover={{ 
+                                    scale: 1.05,
+                                    transition: { type: "spring", stiffness: 400 }
+                                }}
+                                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                            >
+                                <h4 className="text-xl font-semibold mb-3 text-blue-600">
+                                    {goal.name}
+                                </h4>
+                                <p className="text-gray-600 leading-relaxed">
+                                    {goal.description}
+                                </p>
+                            </motion.li>
                         ))}
-                    </ul>
+                    </motion.ul>
                 </article>
-
-
-                <article className='mt-20'>
-                    <h3 className="text-2xl font-semibold mb-4 text-red-600">Our Principles</h3>
-                    <ul className="space-y-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {principles.map((principle, index) => (
-                            <li key={index} className="bg-white p-4 rounded-md shadow-md">
-                                <h4 className="text-xl font-semibold mb-2 text-red-600">{principle.name}</h4>
-                                <p className="text-gray-700">{principle.description}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </article>
-
-
 
             </div>
-        </section>
+        </motion.section>
     );
 };
 
 export default GoalsAndPrinciples;
-
-/***
- * 
- * 
- */

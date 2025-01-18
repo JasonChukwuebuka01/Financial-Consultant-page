@@ -6,11 +6,6 @@ import TeamMember from '@/components/home/TeamMember';
 import ValueCard from '@/components/home/ValueCard';
 import AwardBadge from '@/components/home/AwardBadge';
 
-
-
-
-
-
 const AboutUs = () => {
 
   const teamMembers = [
@@ -20,16 +15,58 @@ const AboutUs = () => {
       bio: 'With over 20 years of experience in investment management...',
       image: '/team/jane-smith.jpg'
     },
-    // Add more team members
+    {
+      name: 'John Doe',
+      role: 'Chief Financial Officer',
+      bio: 'John has a decade of experience in financial planning and analysis...',
+      image: '/team/john-doe.jpg'
+    },
+    {
+      name: 'Emily Johnson',
+      role: 'Chief Technology Officer',
+      bio: 'Emily leads our tech team with innovative solutions and a passion for technology...',
+      image: '/team/emily-johnson.jpg'
+    },
+    {
+      name: 'Michael Brown',
+      role: 'Head of Marketing',
+      bio: 'Michael is an expert in digital marketing and brand strategy...',
+      image: '/team/michael-brown.jpg'
+    },
+    {
+      name: 'Sarah Davis',
+      role: 'Client Relations Manager',
+      bio: 'Sarah ensures our clients receive top-notch service and support...',
+      image: '/team/sarah-davis.jpg'
+    }
   ]
 
   const values = [
     {
       title: 'Integrity',
-      description: 'We believe in absolute transparency...',
+      description: 'We believe in absolute transparency and ethical conduct in all our dealings. Our reputation is built on trust.',
       icon: '🎯'
     },
-    // Add more values
+    {
+      title: 'Innovation',
+      description: 'We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions.',
+      icon: '💡'
+    },
+    {
+      title: 'Excellence',
+      description: 'We strive for the highest standards in everything we do, ensuring quality in every detail.',
+      icon: '⭐'
+    },
+    {
+      title: 'Collaboration',
+      description: 'We foster strong partnerships and teamwork to achieve shared success and growth.',
+      icon: '🤝'
+    },
+    {
+      title: 'Client Focus',
+      description: 'Our clients\' success is our priority. We deliver personalized solutions that exceed expectations.',
+      icon: '👥'
+    }
   ]
 
   const awards = [
@@ -53,7 +90,12 @@ const AboutUs = () => {
         <p className="text-xl text-gray-700 leading-relaxed">
           Founded in 2005, our firm has been at the forefront of investment
           innovation. We believe in combining traditional investment wisdom
-          with cutting-edge technology...
+          with cutting-edge technology to deliver exceptional results for our clients.
+          Our team of experts is dedicated to providing personalized solutions
+          that meet the unique needs of each client. Over the years, we have
+          built a reputation for excellence, integrity, and innovation in the
+          financial industry. We are committed to fostering long-term relationships
+          with our clients and helping them achieve their financial goals.
         </p>
       </motion.section>
 
@@ -61,9 +103,10 @@ const AboutUs = () => {
       <section className="mb-20">
         <h2 className="text-3xl font-bold mb-12">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <TeamMember key={member.name} {...member} />
-          ))}
+          {
+            teamMembers.map((member) => (
+              <TeamMember key={member.name} {...member} />
+            ))}
         </div>
       </section>
 
@@ -82,7 +125,8 @@ const AboutUs = () => {
       <section className="mb-20">
         <h2 className="text-3xl font-bold mb-12">Recognition</h2>
         <div className="flex flex-wrap gap-6">
-          {awards.map((award) => (
+          {
+          awards.map((award) => (
             <AwardBadge key={award.title} {...award} />
           ))}
         </div>

@@ -34,34 +34,40 @@ const Hero = () => {
   ];
 
   return (
-    <section className="hero-section w-full min-h-screen bg-gradient-to-r from-gray-50 to-gray-100">
+    <section className="hero-section w-full min-h-[80vh] bg-gradient-to-r from-gray-50 to-gray-100">
       <Slider {...settings}>
-        {
-          slides.map((slide, index) => (
-            <article key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-4 lg:p-8">
-              <header className="space-y-6">
-                <h1 className="text-3xl lg:text-5xl font-bold text-gray-800">{slide.title}</h1>
-                <p className="text-base lg:text-lg text-gray-600">{slide.description}</p>
-                <nav className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-md">
-                    Schedule a Consultation
-                  </button>
-                  <button className="bg-transparent hover:bg-gray-200 text-primary font-bold py-3 px-6 rounded-md border border-primary">
-                    Learn More
-                  </button>
-                </nav>
-              </header>
-              <figure className="relative h-[300px] lg:h-[500px]">
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  className="object-cover rounded-lg shadow-lg"
-                  priority
-                />
-              </figure>
-            </article>
-          ))}
+        {slides.map((slide, index) => (
+          <article 
+            key={index} 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center p-4 md:p-6 lg:p-8 max-w-7xl mx-auto"
+          >
+            <header className="space-y-4 md:space-y-6 lg:space-y-8 py-4 md:py-6 lg:py-8">
+              <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-800 tracking-tight">
+                {slide.title}
+              </h1>
+              <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl">
+                {slide.description}
+              </p>
+              <nav className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+                <button className="bg-primary hover:bg-primary-dark text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-200">
+                  Schedule a Consultation
+                </button>
+                <button className="bg-transparent hover:bg-gray-200 text-primary font-bold py-2 md:py-3 px-4 md:px-6 rounded-md border border-primary transition-colors duration-200">
+                  Learn More
+                </button>
+              </nav>
+            </header>
+            <figure className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] mt-4 lg:mt-0">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                priority
+              />
+            </figure>
+          </article>
+        ))}
       </Slider>
     </section>
   );

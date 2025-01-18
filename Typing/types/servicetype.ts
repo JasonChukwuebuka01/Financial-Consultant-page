@@ -1,4 +1,4 @@
-
+import { IconType } from 'react-icons/lib';
 
 export interface ServiceType {
   id: string;
@@ -6,7 +6,8 @@ export interface ServiceType {
   description: string;
   icon: IconType;
   benefits: string[];
-  minInvestment?: string;
+  minInvestment: string;
   riskLevel: 'Low' | 'Medium' | 'High';
-  performanceMetric?: string;
+  performanceMetric: string;
 }
+

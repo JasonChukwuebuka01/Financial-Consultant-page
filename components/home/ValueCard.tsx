@@ -9,11 +9,11 @@ interface ValueCardProps {
 const ValueCard = ({ title, description, icon }: ValueCardProps) => {
   return (
     <motion.div 
-      whileHover={{ scale: 1.03 }}
-      className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
+      whileHover={{ scale: 1.05 }}
+      className="bg-white rounded-lg shadow-lg p-5 text-gray-900"
     >
-      <span className="text-4xl mb-4 block">{icon}</span>
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-700">{description}</p>
     </motion.div>
   )
