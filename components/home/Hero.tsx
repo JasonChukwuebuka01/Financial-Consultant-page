@@ -1,76 +1,96 @@
 "use client";
 
-import React from 'react';
-import Slider from 'react-slick';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Shield, Award, TrendingUp } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const Hero = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
-
-  const slides = [
+  const heroSlides = [
     {
-      title: "Unlock Your Financial Future with [Your Investment Firm Name]",
-      description: "Navigating the complexities of the investment landscape to build sustainable growth and lasting financial security for our clients.",
-      image: "https://img.freepik.com/free-photo/sunny-office-scene-front_23-2147626508.jpg",
+      title: "Build Your Legacy Through Strategic Investments",
+      description: "Partner with the industry's most trusted advisors to secure your financial future.",
+      image: "https://img.freepik.com/premium-photo/two-young-black-people-discuss-their-business-using-diagrams-sitting-desk_88135-8026.jpg",
+      overlay: "from-blue-900/90 to-gray-800/80"
     },
     {
-      title: "Achieve Your Financial Goals with Expert Guidance",
-      description: "Providing personalized investment strategies to help you reach your financial aspirations.",
-      image: "https://img.freepik.com/free-photo/business-team-discussing-ideas-startup_23-2147626509.jpg",
+      title: "Data-Driven Investment Solutions",
+      description: "Make informed decisions with our advanced analytics and expert insights.",
+      image: "https://img.freepik.com/free-photo/two-talking-businessmen_23-2147626602.jpg",
+      overlay: "from-gray-900/90 to-purple-800/80"
     },
     {
-      title: "Secure Your Future with Our Proven Investment Solutions",
-      description: "Offering a range of investment options tailored to your unique needs and goals.",
-      image: "https://img.freepik.com/free-photo/close-up-business-people-working-together_23-2147626510.jpg",
+      title: "Secure Your Financial Future",
+      description: "Personalized investment strategies tailored to your goals.",
+      image: "https://img.freepik.com/free-photo/african-man-black-suit_1157-45559.jpg",
+      overlay: "from-green-900/90 to-gray-800/80"
     },
+    {
+      title: "Innovative Business Solutions",
+      description: "Empowering your business with cutting-edge strategies and insights.",
+      image: "https://img.freepik.com/free-photo/business-people-checking-papers_23-2147626490.jpg",
+      overlay: "from-red-900/90 to-gray-800/80"
+    }
   ];
 
   return (
-    <section className="hero-section w-full min-h-[80vh] bg-gradient-to-r from-gray-50 to-gray-100">
-      <Slider {...settings}>
-        {
-          slides.map((slide, index) => (
-            <article
-              key={index}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center p-4 md:p-6 lg:p-8 max-w-7xl mx-auto"
-            >
-              <header className="space-y-4 md:space-y-6 lg:space-y-8 py-4 md:py-6 lg:py-8">
-                <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-800 tracking-tight">
+    <Swiper
+      modules={[Autoplay, Pagination, Navigation]}
+      spaceBetween={0}
+      slidesPerView={1}
+      autoplay={{ delay: 5000 }}
+      pagination={{ clickable: true }}
+      navigation
+      className="h-screen"
+    >
+      {heroSlides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <section className="relative h-screen">
+            {/* Background */}
+            <div className="absolute inset-0">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`} />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="max-w-2xl"
+              >
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                   {slide.title}
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl">
+                <p className="text-xl text-gray-300 mb-8">
                   {slide.description}
                 </p>
-                <nav className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
-                  <button className="bg-primary hover:bg-primary-dark text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-200">
-                    Schedule a Consultation
-                  </button>
-                  <button className="bg-transparent hover:bg-gray-200 text-primary font-bold py-2 md:py-3 px-4 md:px-6 rounded-md border border-primary transition-colors duration-200">
+                <div className="flex gap-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    Start Investing <ArrowRight className="ml-2" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="text-white border-white">
                     Learn More
-                  </button>
-                </nav>
-              </header>
-              <figure className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] mt-4 lg:mt-0">
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  className="object-cover rounded-lg shadow-lg"
-                  priority
-                />
-              </figure>
-            </article>
-          ))}
-      </Slider>
-    </section>
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

@@ -99,7 +99,7 @@ const AboutUs = () => {
         </p>
       </motion.section>
 
-      {/* Team Section */}
+      {/* Temporarily Disabled Team Section 
       <section className="mb-20">
         <h2 className="text-3xl font-bold mb-12">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -109,15 +109,28 @@ const AboutUs = () => {
             ))}
         </div>
       </section>
+      */}
 
       {/* Values Section */}
       <section className="mb-20">
         <h2 className="text-3xl font-bold mb-12">Our Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {
-            values.map((value) => (
-              <ValueCard key={value.title} {...value} />
-            ))}
+        values.map((value) => (
+          <motion.div
+            key={value.title}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white shadow-lg rounded-lg p-6 transition-transform duration-300 ease-in-out"
+          >
+            <div className="flex items-center mb-4">
+          <span className="text-4xl mr-4">{value.icon}</span>
+          <h3 className="text-2xl font-semibold">{value.title}</h3>
+            </div>
+            <p className="text-gray-600">{value.description}</p>
+          </motion.div>
+        ))
+          }
         </div>
       </section>
 
@@ -138,12 +151,12 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We foster an environment of continuous learning and growth...
+              We believe in fostering a culture of trust and transparency with our clients and investors. Our investment philosophy is rooted in the principles of integrity, innovation, and excellence. We aim to empower our clients with the knowledge and tools they need to make informed investment decisions. By prioritizing open communication and personalized service, we build long-lasting relationships based on mutual respect and shared goals. We encourage our clients to embrace a forward-thinking mindset, leveraging cutting-edge technology and data-driven insights to achieve their financial objectives. Together, we strive to create a positive impact in the financial industry and help our clients secure a prosperous future. Our commitment to these values ensures that we remain a trusted partner in the ever-evolving world of finance.
             </p>
           </div>
           <div className="relative h-[400px]">
             <Image
-              src="/images/office-culture.jpg"
+              src="https://img.freepik.com/free-photo/co-workers-having-good-time_1098-2148.jpg"
               alt="Office culture"
               fill
               className="object-cover rounded-lg"
