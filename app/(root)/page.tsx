@@ -10,6 +10,7 @@ import CryptoTicker from "@/components/home/CryptoTicker";
 import TradingView from "@/components/home/TradingView";
 
 export default function Home() {
+  
   return (
     <section>
       <Hero />
