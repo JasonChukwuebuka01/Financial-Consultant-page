@@ -1,65 +1,86 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Check, ArrowRight, Shield, TrendingUp } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
-import { IconType } from 'react-icons/lib';
-
-export interface ServiceType {
-  id: string;
-  title: string;
-  description: string;
-  icon: IconType;
-  benefits: string[];
-  minInvestment: string;
-  riskLevel: 'Low' | 'Medium' | 'High';
-  performanceMetric: string;
+interface CardProps {
+    title: string;
+    description: string;
+    benefits: string[];
+    minInvestment: string;
+    riskLevel: string;
+    performanceMetric: string;
 }
 
-
-
-export const Card: React.FC<ServiceType> = ({
-    title,
-    description,
-    icon: Icon,
-    benefits,
-    minInvestment,
-    riskLevel,
-    performanceMetric
-}: ServiceType) => {
+const Card = ({ title, description, benefits, minInvestment, riskLevel, performanceMetric }: CardProps) => {
     return (
-        <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
-            <div className="flex items-center mb-4">
-                <Icon className="w-8 h-8 text-blue-600" />
-                <h3 className="text-xl font-bold ml-3">{title}</h3>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ y: -5 }}
+            className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+        >
+            {/* Card Header */}
+            <div className="mb-6">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-2">
+                    {title}
+                </h3>
+                <p className="text-gray-600">{description}</p>
             </div>
-            <p className="text-gray-600 mb-4">{description}</p>
 
-            <ul className="space-y-2 mb-4">
-
-                {
-                    benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-center">
-                            <span className="text-blue-600 mr-2">✓</span>
-                            {benefit}
-                        </li>
-                    ))}
+            {/* Benefits List */}
+            <ul className="space-y-3 mb-8">
+                {benefits.map((benefit, index) => (
+                    <motion.li 
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex items-center space-x-3"
+                    >
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
+                            <Check className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-gray-700">{benefit}</span>
+                    </motion.li>
+                ))}
             </ul>
-            <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
-                <div>
-                    <p className="text-gray-500">Minimum Investment</p>
-                    <p className="font-semibold">{minInvestment}</p>
+
+            {/* Metrics Grid */}
+            <div className="grid grid-cols-2 gap-6 mb-8 p-4 bg-gray-50 rounded-xl">
+                <div className="space-y-1">
+                    <p className="text-sm text-gray-500">Minimum Investment</p>
+                    <p className="text-lg font-semibold text-gray-900">{minInvestment}</p>
                 </div>
-                <div>
-                    <p className="text-gray-500">Risk Level</p>
-                    <p className="font-semibold">{riskLevel}</p>
+                <div className="space-y-1">
+                    <p className="text-sm text-gray-500">Risk Level</p>
+                    <div className="flex items-center space-x-2">
+                        <Shield className="w-4 h-4 text-primary" />
+                        <p className="text-lg font-semibold text-gray-900">{riskLevel}</p>
+                    </div>
                 </div>
             </div>
-            <div className="mb-4">
-                <p className="text-gray-500">Performance</p>
-                <p className="font-semibold text-green-600">{performanceMetric}</p>
+
+            {/* Performance Metric */}
+            <div className="mb-8 p-4 bg-green-50 rounded-xl">
+                <p className="text-sm text-gray-500 mb-1">Performance</p>
+                <div className="flex items-center space-x-2">
+                    <TrendingUp className="w-4 h-4 text-green-600" />
+                    <p className="text-lg font-semibold text-green-600">{performanceMetric}</p>
+                </div>
             </div>
-            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors">
-                Learn More
-            </button>
-        </div>
+
+            {/* CTA Button */}
+            <Button 
+                className="w-full bg-primary hover:bg-primary/90 transition-all duration-300 group"
+            >
+                <span className="mr-2">Learn More</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+        </motion.div>
     );
 };
 

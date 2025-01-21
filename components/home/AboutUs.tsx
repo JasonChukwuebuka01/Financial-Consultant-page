@@ -48,7 +48,7 @@ const AboutUs = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-primary">Mission</span>
+            Our <span className="text-primaryy">Mission</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Empowering investors with innovative solutions and expert guidance to achieve their financial goals.
@@ -57,19 +57,20 @@ const AboutUs = () => {
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {values.map((value, index) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className={`${value.color} p-8 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
-            >
-              <value.icon className="w-12 h-12 text-primary mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
-            </motion.div>
-          ))}
+          {
+            values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className={`${value.color} p-8 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
+              >
+                <value.icon className="w-12 h-12 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </motion.div>
+            ))}
         </div>
 
         {/* Stats Section */}
