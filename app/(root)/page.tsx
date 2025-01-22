@@ -5,9 +5,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import AboutUs from "@/components/home/AboutUs";
 import ServicesPage from "@/components/home/ServicePage";
 import Philosophy from "@/components/home/Philosophy";
+//import Testimonials from "@/components/home/Testominials";
 import Testimonials from "@/components/home/Testominials";
 import CryptoTicker from "@/components/home/CryptoTicker";
 import TradingView from "@/components/home/TradingView";
+import Testominials from "@/components/home/Testominials";
 
 export default function Home() {
   
@@ -18,7 +20,7 @@ export default function Home() {
       <GoalsAndPrinciples />
       <ServicesPage />
       <Philosophy />
-      <Testimonials />
+      <Testominials/>
       <CryptoTicker />
 
     </section>

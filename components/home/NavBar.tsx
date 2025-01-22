@@ -93,22 +93,24 @@ const NavBar = () => {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
+              <SheetContent side="right" className="w-[300px] pt-6">
                 <SheetHeader>
-                  <SheetTitle>Menu</SheetTitle>
+                  
+                    <SheetTitle>Menu</SheetTitle>
+                  
                 </SheetHeader>
-                <div className="mt-8 flex flex-col space-y-4">
+                <div className="mt-6 flex flex-col space-y-3">
                   {navLinks.map((link) => (
                     <Link
                       key={link.title}
                       href={link.href}
-                      className="text-lg text-gray-700 hover:text-primary"
+                      className="text-base text-gray-700 hover:text-primary transition-colors"
                     >
                       {link.title}
                     </Link>
                   ))}
-                  <Button variant="outline" className="w-full">Sign In</Button>
-                  <Button className="w-full">Get Started</Button>
+                  <Button variant="outline" size="sm" className="w-full mt-2">Sign In</Button>
+                  <Button size="sm" className="w-full">Get Started</Button>
                 </div>
               </SheetContent>
             </Sheet>

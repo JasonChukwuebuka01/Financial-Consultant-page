@@ -82,7 +82,7 @@ const StarRating = ({ rating }: { rating: number }) => {
   )
 }
 
-export default function Testimonials() {
+export default function Testominials() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -143,7 +143,7 @@ export default function Testimonials() {
         </Swiper>
 
         {/* Client Logos Section */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <h3 className="text-2xl font-semibold mb-8 text-center">
             Trusted by Industry Leaders
           </h3>
@@ -160,22 +160,22 @@ export default function Testimonials() {
           >
             {clientLogos.map((client, index) => (
               <SwiperSlide key={index}>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  className="relative w-32 h-16 mx-auto"
-                >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    fill
-                    className="object-contain filter grayscale hover:grayscale-0 transition-all"
-                  />
-                </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="relative w-32 h-16 mx-auto"
+          >
+            <Image
+              src={client.logo}
+              alt={client.name}
+              fill
+              className="object-contain filter grayscale hover:grayscale-0 transition-all"
+            />
+          </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> */}
       </div>
     </section>
   )

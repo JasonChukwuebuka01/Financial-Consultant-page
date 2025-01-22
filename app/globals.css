@@ -82,3 +82,25 @@ body {
 div[style*="animation: scroll"] {
   animation: scroll 30s linear infinite;
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 70s linear infinite;
+}
+
+@keyframes priceChange {
+  0% { color: inherit; }
+  50% { color: #3b82f6; }
+  100% { color: inherit; }
+}
+
+.price-changed {
+  animation: priceChange 1s ease;
+}
