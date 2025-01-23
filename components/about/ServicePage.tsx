@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { services } from '@/datas/datas';
-import Card from './Card';
+import Card from '../home/Card';
+
 
 const ServicesPage: React.FC = () => {
   return (

@@ -25,24 +25,24 @@ const NavBar = () => {
 
   const navLinks = [
     { title: 'About Us', href: '/about' },
-    { title: 'Investment Plans', href: '/investments' },
-    { title: 'Services', href: '/services' },
+    { title: 'Trading Plans', href: '/trading-plans' },
+    { title: 'FAQ', href: '/faq' },
     { title: 'Contact', href: '/contact' }
   ];
 
   return (
-    <nav 
+    <nav
       className={`
         fixed w-full z-50 transition-all duration-300
-        ${isScrolled 
-          ? 'bg-white/80 backdrop-blur-lg shadow-lg' 
+        ${isScrolled
+          ? 'bg-white/80 backdrop-blur-lg shadow-lg'
           : 'bg-transparent'}
       `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link 
+          <Link
             href="/"
             className="flex items-center space-x-2"
           >
@@ -69,8 +69,8 @@ const NavBar = () => {
 
             {/* Auth Buttons */}
             <div className="flex items-center space-x-4">
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 className={`${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-primary`}
               >
                 Sign In
@@ -85,8 +85,8 @@ const NavBar = () => {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="icon"
                   className={isScrolled ? 'text-gray-700' : 'text-white'}
                 >
@@ -95,20 +95,21 @@ const NavBar = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] pt-6">
                 <SheetHeader>
-                  
-                    <SheetTitle>Menu</SheetTitle>
-                  
+
+                  <SheetTitle></SheetTitle>
+
                 </SheetHeader>
                 <div className="mt-6 flex flex-col space-y-3">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.title}
-                      href={link.href}
-                      className="text-base text-gray-700 hover:text-primary transition-colors"
-                    >
-                      {link.title}
-                    </Link>
-                  ))}
+                  {
+                    navLinks.map((link) => (
+                      <Link
+                        key={link.title}
+                        href={link.href}
+                        className="text-base text-gray-700 hover:text-primary transition-colors"
+                      >
+                        {link.title}
+                      </Link>
+                    ))}
                   <Button variant="outline" size="sm" className="w-full mt-2">Sign In</Button>
                   <Button size="sm" className="w-full">Get Started</Button>
                 </div>

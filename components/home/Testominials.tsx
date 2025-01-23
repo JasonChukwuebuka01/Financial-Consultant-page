@@ -97,9 +97,8 @@ export default function Testominials() {
 
         {/* Testimonials Slider */}
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[ Pagination, Autoplay]}
           spaceBetween={30}
-          navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
           breakpoints={{

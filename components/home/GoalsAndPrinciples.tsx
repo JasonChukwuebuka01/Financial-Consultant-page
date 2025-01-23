@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Award, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 interface Goal {
     name: string;
@@ -103,9 +104,14 @@ const GoalsAndPrinciples = () => {
                     transition={{ delay: 0.8 }}
                     className="mt-16 text-center"
                 >
-                    <Button size="lg" className="bg-primary hover:bg-primary/90">
-                        Learn More About Our Approach
-                    </Button>
+                    <Link href="/about">
+
+                        <Button size="lg" className="bg-primary hover:bg-primary/90">
+                            Learn More About Our Approach
+                        </Button>
+                    </Link>
+
+
                 </motion.div>
             </div>
         </section>

@@ -1,12 +1,10 @@
-import GoalsAndPrinciples from "@/components/home/GoalsAndPrinciples";
-import Hero from "@/components/home/Hero";
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Hero from "@/components/home/Hero";
 import AboutUs from "@/components/home/AboutUs";
-import ServicesPage from "@/components/home/ServicePage";
+import GoalsAndPrinciples from "@/components/home/GoalsAndPrinciples";
 import Philosophy from "@/components/home/Philosophy";
-//import Testimonials from "@/components/home/Testominials";
-import Testimonials from "@/components/home/Testominials";
 import CryptoTicker from "@/components/home/CryptoTicker";
 import TradingView from "@/components/home/TradingView";
 import Testominials from "@/components/home/Testominials";
@@ -18,7 +16,6 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <GoalsAndPrinciples />
-      <ServicesPage />
       <Philosophy />
       <Testominials/>
       <CryptoTicker />
