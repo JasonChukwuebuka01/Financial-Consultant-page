@@ -79,11 +79,11 @@ export default function AboutPage() {
               },
               {
                 title: "Excellence",
-                description: "We strive for the highest standards in everything we do. Our team is committed to delivering exceptional service and results, continuously improving and innovating to meet and exceed your expectations.",
+                description: "We&apos;re committed to delivering exceptional service and results. Our team strives to exceed expectations in everything we do.",
               },
               {
-                title: "Client Focus",
-                description: "Our clients' success is our top priority. We take the time to understand your unique needs and goals, offering personalized solutions and dedicated support to help you achieve financial success.",
+                title: "Innovation",
+                description: "In today&apos;s dynamic market, we&apos;re constantly evolving and adapting to bring you cutting-edge investment solutions.",
               },
             ].map((value, index) => (
               <div key={index} className="p-8 bg-white text-gray-900 shadow-lg rounded-lg transform transition-transform hover:scale-105 hover:shadow-2xl">

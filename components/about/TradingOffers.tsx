@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React from 'react';
 
 
@@ -43,7 +44,7 @@ const TradingOffers = () => {
                                     </button>
                                 </div>
                                 <div className="flex-shrink-0 w-full md:w-1/3">
-                                    <img src={offer.imageUrl} alt={offer.title} className="w-full h-32 md:h-auto object-cover" />
+                                    <Image src={offer.imageUrl} alt={offer.title} className="w-full h-32 md:h-auto object-cover" />
                                 </div>
                             </div>
                         ))

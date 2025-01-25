@@ -3,6 +3,7 @@
 import React, { useState, useEffect, FC } from "react";
 import axios from "axios";
 import { CryptoData } from "@/Typing/types/cryptoData";
+import Image from "next/image";
 
 
 
@@ -107,7 +108,7 @@ const CryptoTicker: FC = () => {
                      border border-white/10 hover:border-blue-500/50 transition-all duration-300
                      transform hover:scale-105 hover:bg-white/10 mx-4 ${priceChanged[crypto.id] ? 'text-blue-400' : ''}`}
               >
-                <img
+                <Image
                   src={crypto.image}
                   alt={crypto.name}
                   className="w-6 h-6 mr-3"
