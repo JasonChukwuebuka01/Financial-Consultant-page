@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FaStar } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import {  Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -108,7 +108,8 @@ export default function Testominials() {
           }}
           className="testimonial-slider pb-12"
         >
-          {testimonials.map((testimonial, index) => (
+          {
+          testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -134,47 +135,13 @@ export default function Testominials() {
                 </div>
                 <StarRating rating={testimonial.rating} />
                 <p className="mt-4 text-gray-700 leading-relaxed">
-                  "{testimonial.testimonial}"
+                  &ldquo;{testimonial.testimonial.replace(/'/g, "&apos;")}&rdquo;
                 </p>
               </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Client Logos Section */}
-        {/* <div className="mt-20">
-          <h3 className="text-2xl font-semibold mb-8 text-center">
-            Trusted by Industry Leaders
-          </h3>
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={50}
-            autoplay={{ delay: 3000 }}
-            loop={true}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 }
-            }}
-          >
-            {clientLogos.map((client, index) => (
-              <SwiperSlide key={index}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="relative w-32 h-16 mx-auto"
-          >
-            <Image
-              src={client.logo}
-              alt={client.name}
-              fill
-              className="object-contain filter grayscale hover:grayscale-0 transition-all"
-            />
-          </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div> */}
       </div>
     </section>
   )

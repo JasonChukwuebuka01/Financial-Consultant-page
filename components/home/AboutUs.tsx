@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Shield, Lightbulb, Star, Users, Target, HandshakeIcon } from 'lucide-react';
+import { Shield, Lightbulb, Star, Users, HandshakeIcon } from 'lucide-react';
 
 const AboutUs = () => {
   const values = [

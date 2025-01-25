@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-import HeaderBanner from '../home/HeaderBanner';
 
 const offers = [
     {

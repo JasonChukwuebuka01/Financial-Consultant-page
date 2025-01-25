@@ -9,7 +9,7 @@ import Link from 'next/link';
 interface Goal {
     name: string;
     description: string;
-    icon: any;
+    icon: React.ElementType;
 }
 
 const goals: Goal[] = [
@@ -81,7 +81,7 @@ const GoalsAndPrinciples = () => {
                     animate="visible"
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
-                    {goals.map((goal, index) => (
+                    {goals.map((goal) => (
                         <motion.div
                             key={goal.name}
                             variants={itemVariants}

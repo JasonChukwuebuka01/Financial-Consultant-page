@@ -12,7 +12,7 @@ const CryptoTicker: FC = () => {
   const [cryptoData, setCryptoData] = useState<CryptoData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [priceChanged, setPriceChanged] = useState<{ [key: string]: boolean }>({});
+  const [priceChanged, ] = useState<{ [key: string]: boolean }>({});
 
 
 
