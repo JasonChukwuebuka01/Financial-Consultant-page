@@ -48,23 +48,9 @@ const testimonials: TestimonialProps[] = [
     role: "Product Manager",
     company: "NextGen Solutions",
     image: "/testimonials/james.jpg",
-    testimonial: "Their attention to detail and commitment to quality is unparalleled. We couldn't be happier.",
+    testimonial: "We&apos;re impressed with their innovative approach and dedication.",
     rating: 5
-  },
-  {
-    name: "Olivia Brown",
-    role: "HR Director",
-    company: "PeopleFirst",
-    image: "/testimonials/olivia.jpg",
-    testimonial: "A truly professional team that delivered outstanding results. Our employees are thrilled.",
-    rating: 4
   }
-]
-
-const clientLogos = [
-  { name: "Company 1", logo: "/logos/company1.png" },
-  { name: "Company 2", logo: "/logos/company2.png" },
-  // Add more logos
 ]
 
 const StarRating = ({ rating }: { rating: number }) => {

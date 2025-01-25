@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -43,6 +42,8 @@ export default function AboutPage() {
                 that help you achieve your financial goals. Join us on a journey towards
                 financial empowerment and success.
               </p>
+              <p>We&apos;re committed to excellence</p>
+              <p>Your company&apos;s success</p>
             </motion.div>
           </div>
         </div>
