@@ -6,10 +6,11 @@ import AboutUs from "@/components/home/AboutUs";
 import GoalsAndPrinciples from "@/components/home/GoalsAndPrinciples";
 import Philosophy from "@/components/home/Philosophy";
 import CryptoTicker from "@/components/home/CryptoTicker";
-import TradingView from "@/components/home/TradingView";
 import Testominials from "@/components/home/Testominials";
 
 export default function Home() {
+  
+
   
   return (
     <section>
@@ -19,7 +20,6 @@ export default function Home() {
       <Philosophy />
       <Testominials/>
       <CryptoTicker />
-
     </section>
   );
 }

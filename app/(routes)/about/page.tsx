@@ -5,9 +5,12 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import HeaderBanner from '@/components/home/HeaderBanner';
+
 
 export default function AboutPage() {
+
+
+
   return (
     <main className="min-h-screen">
       {/* Hero Banner */}

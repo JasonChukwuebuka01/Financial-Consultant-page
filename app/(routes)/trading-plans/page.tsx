@@ -17,4 +17,4 @@ const TradingPlansPage = () => {
     )
 }
 
-export default TradingPlansPage;1
+export default TradingPlansPage;

@@ -9,6 +9,7 @@ import {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
@@ -53,13 +54,14 @@ const NavBar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+            {
+            navLinks.map((link) => (
               <Link
                 key={link.title}
                 href={link.href}
                 className={`
                   px-2 py-2 text-sm font-medium
-                  ${isScrolled ? 'text-gray-700' : 'text-white'}
+                  ${isScrolled ? 'text-gray-700' : 'text-gray-100'} 
                   hover:text-primary transition-colors
                 `}
               >
@@ -69,15 +71,19 @@ const NavBar = () => {
 
             {/* Auth Buttons */}
             <div className="flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                className={`${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-primary`}
-              >
-                Sign In
-              </Button>
-              <Button className="bg-primary hover:bg-primary/90">
+                <Link href="/sign-in">
+                <Button
+                  variant="ghost"
+                  className={`${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-primary`}
+                >
+                  Sign In
+                </Button>
+                </Link>
+              <Link href="/sign-in">
+                <Button className="bg-primary hover:bg-primary/90">
                 Get Started
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -107,11 +113,17 @@ const NavBar = () => {
                         href={link.href}
                         className="text-base text-gray-700 hover:text-primary transition-colors"
                       >
-                        {link.title}
+                        <SheetClose>
+                          {link.title}
+                        </SheetClose>
                       </Link>
                     ))}
-                  <Button variant="outline" size="sm" className="w-full mt-2">Sign In</Button>
-                  <Button size="sm" className="w-full">Get Started</Button>
+                  <Link href="/sign-in">
+                    <Button variant="outline" size="sm" className="w-full mt-2">Sign In</Button>
+                  </Link>
+                    <Link href="/sign-in">
+                    <Button size="sm" className="w-full">Get Started</Button>
+                    </Link>
                 </div>
               </SheetContent>
             </Sheet>
