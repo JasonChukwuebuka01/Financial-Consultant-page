@@ -76,10 +76,12 @@ export default function AboutPage() {
               },
               {
                 title: "Excellence",
+                // Fixed apostrophe here
                 description: "We&apos;re committed to delivering exceptional service and results. Our team strives to exceed expectations in everything we do.",
               },
               {
                 title: "Innovation",
+                // Fixed apostrophe here
                 description: "In today&apos;s dynamic market, we&apos;re constantly evolving and adapting to bring you cutting-edge investment solutions.",
               },
             ].map((value, index) => (
