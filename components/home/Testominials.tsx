@@ -68,7 +68,11 @@ const StarRating = ({ rating }: { rating: number }) => {
   )
 }
 
+
+
 export default function Testominials() {
+
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -104,14 +108,15 @@ export default function Testominials() {
                 className="bg-white rounded-xl shadow-lg p-8 h-full"
               >
                 <div className="flex items-center mb-6">
-                  <div className="relative w-12 h-12 mr-4">
+                    <div className="relative w-12 h-12 mr-4">
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
-                      fill
-                      className="rounded-full object-cover"
+                      width={48}
+                      height={48}
+                      className="rounded-full object-cover w-full h-full"
                     />
-                  </div>
+                    </div>
                   <div>
                     <h3 className="font-semibold text-lg">{testimonial.name}</h3>
                     <p className="text-gray-600">

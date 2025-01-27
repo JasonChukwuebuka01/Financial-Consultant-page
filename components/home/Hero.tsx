@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
-import { ArrowRight} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination} from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -59,9 +59,11 @@ const Hero = () => {
                 <Image
                   src={slide.image}
                   alt={slide.title}
-                  fill
-                  className="object-cover"
+                  width={1920}
+                  height={1080}
+                  className="object-cover w-full h-full"
                   priority
+                  sizes="100vw"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`} />
               </div>
@@ -80,18 +82,18 @@ const Hero = () => {
                   <p className="text-xl text-gray-300 mb-8">
                     {slide.description}
                   </p>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.9 }}
-                      className="flex gap-4"
-                    >
-                      <Link href="/sign-in">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.9 }}
+                    className="flex gap-4"
+                  >
+                    <Link href="/sign-in">
                       <Button size="lg" className="font-bold bg-primary hover:bg-primary/90">
                         Start Trade <ArrowRight className="ml-2" />
                       </Button>
-                      </Link>
-                    </motion.div>
+                    </Link>
+                  </motion.div>
                 </motion.div>
               </div>
             </section>

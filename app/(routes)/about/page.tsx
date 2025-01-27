@@ -1,6 +1,6 @@
 "use client";
 
-import Image from 'next/image';
+
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -14,12 +14,10 @@ export default function AboutPage() {
     <main className="min-h-screen">
       {/* Hero Banner */}
       <header className="relative h-screen w-full">
-        <Image
+        <img 
           src="https://img.freepik.com/free-photo/african-man-black-suit_1157-45559.jpg"
-          alt="InvestFirm Office"
-          layout="fill"
-          className="object-cover brightness-50"
-          priority
+          alt="Business Professional"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50">
           <div className="container mx-auto h-full flex items-center">
@@ -42,8 +40,7 @@ export default function AboutPage() {
                 that help you achieve your financial goals. Join us on a journey towards
                 financial empowerment and success.
               </p>
-              <p>We&apos;re committed to excellence</p>
-              <p>Your company&apos;s success</p>
+        
             </motion.div>
           </div>
         </div>
@@ -124,7 +121,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <Image
+              <img 
                 src={offer.image}
                 alt={offer.title}
                 width={400}

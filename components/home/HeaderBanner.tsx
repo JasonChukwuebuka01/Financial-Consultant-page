@@ -14,8 +14,10 @@ const HeaderBanner = () => {
       <Image
         src="https://img.freepik.com/free-photo/business-people-checking-papers_23-2147626490.jpg"
         alt="InvestFirm Office"
-        layout="fill"
-        className="object-cover brightness-50"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="object-cover brightness-50 w-full h-full"
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50">

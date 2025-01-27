@@ -102,15 +102,17 @@ const CryptoTicker: FC = () => {
 
           {
             cryptoData.map((crypto, index) => (
-              <div
+                <div
                 key={`original-${index}`}
                 className={`inline-flex items-center px-6 py-2 rounded-lg bg-white/5 backdrop-blur-md
-                     border border-white/10 hover:border-blue-500/50 transition-all duration-300
-                     transform hover:scale-105 hover:bg-white/10 mx-4 ${priceChanged[crypto.id] ? 'text-blue-400' : ''}`}
-              >
+                   border border-white/10 hover:border-blue-500/50 transition-all duration-300
+                   transform hover:scale-105 hover:bg-white/10 mx-4 ${priceChanged[crypto.id] ? 'text-blue-400' : ''}`}
+                >
                 <Image
                   src={crypto.image}
                   alt={crypto.name}
+                  width={24}
+                  height={24}
                   className="w-6 h-6 mr-3"
                 />
                 <span className="font-medium text-white">

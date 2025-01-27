@@ -44,7 +44,13 @@ const TradingOffers = () => {
                                     </button>
                                 </div>
                                 <div className="flex-shrink-0 w-full md:w-1/3">
-                                    <Image src={offer.imageUrl} alt={offer.title} className="w-full h-32 md:h-auto object-cover" />
+                                    <Image
+                                        src={offer.imageUrl}
+                                        alt={offer.title}
+                                        width={500}
+                                        height={300}
+                                        className="w-full h-32 md:h-auto object-cover"
+                                    />
                                 </div>
                             </div>
                         ))

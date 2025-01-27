@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { 
-  LineChart, 
-  ShieldCheck, 
-  Search, 
+import {
+  LineChart,
+  ShieldCheck,
+  Search,
   Timer,
 } from 'lucide-react';
 
@@ -48,25 +48,26 @@ const Philosophy = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {philosophyData.map(({ Icon, title, description }, index) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="text-blue-600 mb-6">
-                <Icon className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                {title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {description}
-              </p>
-            </motion.div>
-          ))}
+          {
+            philosophyData.map(({ Icon, title, description }, index) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="text-blue-600 mb-6">
+                  <Icon className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {description}
+                </p>
+              </motion.div>
+            ))}
         </div>
       </div>
     </section>
