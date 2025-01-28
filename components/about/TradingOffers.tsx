@@ -49,7 +49,7 @@ const TradingOffers = () => {
                                         alt={offer.title}
                                         width={500}
                                         height={300}
-                                        className="w-full h-32 md:h-auto object-cover"
+                                        className="w-full h-44 md:h-auto object-cover"
                                     />
                                 </div>
                             </div>
