@@ -3,15 +3,17 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import HeaderBanner from '@/components/home/HeaderBanner';
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 
 const ContactPage = () => {
+
 
 
   const [formData, setFormData] = useState({
@@ -21,11 +23,15 @@ const ContactPage = () => {
     message: '',
   });
 
+
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log(formData);
   };
+
+
 
   const contactInfo = [
     {
@@ -50,9 +56,48 @@ const ContactPage = () => {
     },
   ];
 
+
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-        <HeaderBanner/>
+      <header className="relative h-screen w-full ">
+        <Image
+          src="https://img.freepik.com/free-photo/business-people-checking-papers_23-2147626490.jpg"
+          alt="InvestFirm Office"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="object-cover brightness-50 w-full h-full"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50">
+          <div className="container mx-auto h-full flex items-center px-8">
+            <motion.div
+              className="max-w-2xl text-white space-y-6"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <nav className="text-sm text-gray-300 flex items-center space-x-2">
+                <Link href="/" className="hover:underline hover:text-white transition duration-300">
+                  Home
+                </Link>
+                <span>/</span>
+                <span className="text-white">Contact</span>
+              </nav>
+              <h1 className="text-5xl font-bold">Empowering Your Financial Future</h1>
+              <p className="text-lg text-gray-200">
+                At InvestFirm, we are dedicated to providing innovative investment solutions
+                that help you achieve your financial goals. Join us on a journey towards
+                financial empowerment and success.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </header>
+
+
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,23 +117,24 @@ const ContactPage = () => {
                 Get in Touch
               </h2>
               <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start space-x-4"
-                  >
-                    <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-gray-900">{info.title}</h3>
-                      <p className="text-gray-600 mt-1">{info.content}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                {
+                  contactInfo.map((info, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-start space-x-4"
+                    >
+                      <div className="flex-shrink-0 bg-blue-50 p-3 rounded-lg">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900">{info.title}</h3>
+                        <p className="text-gray-600 mt-1">{info.content}</p>
+                      </div>
+                    </motion.div>
+                  ))}
               </div>
             </div>
 

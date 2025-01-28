@@ -13,7 +13,10 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
+
+
 const NavBar = () => {
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -55,33 +58,33 @@ const NavBar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {
-            navLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className={`
+              navLinks.map((link) => (
+                <Link
+                  key={link.title}
+                  href={link.href}
+                  className={`
                   px-2 py-2 text-sm font-medium
                   ${isScrolled ? 'text-gray-700' : 'text-gray-100'} 
                   hover:text-primary transition-colors
                 `}
-              >
-                {link.title}
-              </Link>
-            ))}
+                >
+                  {link.title}
+                </Link>
+              ))}
 
             {/* Auth Buttons */}
             <div className="flex items-center space-x-4">
-                <Link href="/sign-in">
+              <Link href="/sign-in">
                 <Button
                   variant="ghost"
                   className={`${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-primary`}
                 >
                   Sign In
                 </Button>
-                </Link>
+              </Link>
               <Link href="/sign-in">
                 <Button className="bg-primary hover:bg-primary/90">
-                Get Started
+                  Get Started
                 </Button>
               </Link>
             </div>
@@ -119,11 +122,11 @@ const NavBar = () => {
                       </Link>
                     ))}
                   <Link href="/sign-in">
-                    <Button variant="outline" size="sm" className="w-full mt-2">Sign In</Button>
+                    <Button variant="outline" size="sm" className="w-full "> <SheetClose className='w-full'>Sign In</SheetClose></Button>
                   </Link>
-                    <Link href="/sign-in">
-                    <Button size="sm" className="w-full">Get Started</Button>
-                    </Link>
+                  <Link href="/sign-in">
+                    <Button size="sm" className="w-full"><SheetClose className='w-full'>Get Started</SheetClose></Button>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>

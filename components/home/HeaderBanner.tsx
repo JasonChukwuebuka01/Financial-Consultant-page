@@ -21,7 +21,7 @@ const HeaderBanner = () => {
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50">
-        <div className="container mx-auto h-full flex items-center">
+        <div className="container mx-auto h-full flex items-center px-8">
           <motion.div
             className="max-w-2xl text-white space-y-6"
             initial={{ opacity: 0, y: 50 }}

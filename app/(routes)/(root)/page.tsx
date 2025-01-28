@@ -8,6 +8,8 @@ import Philosophy from "@/components/home/Philosophy";
 import CryptoTicker from "@/components/home/CryptoTicker";
 import Testominials from "@/components/home/Testominials";
 
+
+
 export default function Home() {
   
 
