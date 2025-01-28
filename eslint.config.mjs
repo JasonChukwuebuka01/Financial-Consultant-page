@@ -17,12 +17,15 @@ const eslintConfig = [
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "react/display-name": "off",
-      "@typescript-eslint/ban-types": "off"
+      "@typescript-eslint/ban-types": "off",
+      "typescript-eslint/no-unused-vars": "off"
     },
     ignorePatterns: [
       "node_modules/*",
       ".next/*",
-      "out/*"
+      "out/*",
+      "*.config.js",
+      "*.config.mjs"
     ]
   }
 ];
